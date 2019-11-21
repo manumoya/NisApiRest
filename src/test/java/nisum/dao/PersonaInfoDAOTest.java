@@ -33,10 +33,14 @@ public class PersonaInfoDAOTest {
 
     @Test
     public void get() {
-        //Persona persona = new Persona(0,"manu1", "moya1", "rgua1", 999, "red");
-        //int id2 = PersonaInfoDAO.save(persona);
         Persona persona = PersonaInfoDAO.get(1);
         assertEquals("manolo", persona.getName());
+    }
+
+    @Test
+    public void delete() {
+        int id = PersonaInfoDAO.delete(1);
+        assertEquals(1, id);
     }
 
 }
