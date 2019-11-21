@@ -15,7 +15,7 @@ public class PersonaInfoService {
         return PersonaInfoDAO.save(persona);
     }
 
-    public static Persona getPersona(Integer idPersona){
+    public static Persona getPersona(int idPersona){
         return PersonaInfoDAO.get(idPersona);
     }
 
@@ -23,7 +23,7 @@ public class PersonaInfoService {
         return PersonaInfoDAO.update(persona);
     }
 
-    public static int deletePersona(Integer idPersona){
+    public static int deletePersona(int idPersona){
         return PersonaInfoDAO.delete(idPersona);
     }
 

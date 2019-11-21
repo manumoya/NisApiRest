@@ -43,7 +43,7 @@ public class PersonaInfoDAO {
                 personas.get(contId).setPhoneNumber( personaNew.getPhoneNumber() );
                 personas.get(contId).setHairColour( personaNew.getHairColour() );
                 personUpdated = personas.get(contId);
-                contId= personas.size()+1;
+                //contId= personas.size()+1;
             }
             contId++;
         }
@@ -55,10 +55,11 @@ public class PersonaInfoDAO {
         for (Persona persona : personas) {
             if (idDel == persona.getId()) {
                 personas.remove(contId);
-                contId= personas.size()+1;
+                //contId= personas.size()+1;
             }
             contId++;
         }
+
         return idDel;
     }
 }

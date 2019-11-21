@@ -72,9 +72,9 @@ public class PersonaInfoController {
             throw new RuntimeException("Persona ID no encontrada - "+ personaId);
         }
 
-        PersonaInfoService.deletePersona(personaId);
+        int idDel = PersonaInfoService.deletePersona(personaId);
 
-        return "Usuario ID eliminado - " + personaId;
+        return "Usuario ID eliminado - " + idDel;
     }
 
 }
