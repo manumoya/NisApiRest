@@ -34,7 +34,7 @@ public class PersonaInfoController {
             throw new RuntimeException( valid.getMessage() );
         }
 
-        PersonaInfoService.savePersona(persona);
+        int id = PersonaInfoService.savePersona(persona);
         return persona;
     }
 

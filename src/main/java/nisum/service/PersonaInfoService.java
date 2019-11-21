@@ -11,10 +11,10 @@ public class PersonaInfoService {
         return PersonaInfoDAO.findAll();
     }
 
-    public static void savePersona(Persona persona){
-        Integer id = PersonaInfoDAO.findAll().size()+1;
-        persona.setId(id);
-        PersonaInfoDAO.save(persona);
+    public static int savePersona(Persona persona){
+        //Integer id = PersonaInfoDAO.findAll().size()+1;
+        //persona.setId(id);
+        return PersonaInfoDAO.save(persona);
     }
 
     public static Persona getPersona(Integer idPersona){

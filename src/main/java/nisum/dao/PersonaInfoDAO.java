@@ -15,14 +15,17 @@ public class PersonaInfoDAO {
     }
 
     /* graba una persona */
-    public static void save (Persona persona){
+    public static int save (Persona persona){
+        Integer id = findAll().size()+1;
+        persona.setId(id);
         personas.add(persona);
+        return id;
     }
 
     public static Persona get(Integer idPersona){
         Persona personFound = new Persona();
         for (Persona persona : personas) {
-            if (idPersona.equals(persona.getId())) {
+            if (idPersona == persona.getId()) {
                 personFound = persona;
             }
         }
@@ -33,7 +36,7 @@ public class PersonaInfoDAO {
         Persona personUpdated = new Persona();
         int contId =0;
         for (Persona persona : personas) {
-            if (personaNew.getId().equals(persona.getId())) {
+            if ( personaNew.getId() == persona.getId() ) {
                 personas.get(contId).setName( personaNew.getName() );
                 personas.get(contId).setLastName( personaNew.getLastName() );
                 personas.get(contId).setAddress( personaNew.getLastName() );
