@@ -12,8 +12,6 @@ public class PersonaInfoService {
     }
 
     public static int savePersona(Persona persona){
-        //Integer id = PersonaInfoDAO.findAll().size()+1;
-        //persona.setId(id);
         return PersonaInfoDAO.save(persona);
     }
 
