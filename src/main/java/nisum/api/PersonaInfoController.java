@@ -1,7 +1,9 @@
 package nisum.api;
 
 import nisum.dao.PersonaInfoDAO;
+import nisum.model.Validation;
 import nisum.service.PersonaInfoService;
+import nisum.service.PersonaValidation;
 import org.springframework.web.bind.annotation.*;
 import nisum.model.Persona;
 
@@ -25,6 +27,13 @@ public class PersonaInfoController {
     /* POST => Grabar persona */
     @PostMapping("/persona")
     public Persona addUser(@RequestBody Persona persona) {
+
+        Validation valid = PersonaValidation.hairColour(persona);
+
+        if(!valid.isValidated()) {
+            throw new RuntimeException( valid.getMessage() );
+        }
+
         PersonaInfoService.savePersona(persona);
         return persona;
     }
