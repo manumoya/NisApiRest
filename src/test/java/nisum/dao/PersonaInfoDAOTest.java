@@ -22,8 +22,6 @@ public class PersonaInfoDAOTest {
 
    @Test
     public void update() {
-        ///Persona persona = new Persona(0,"manu", "moya", "rgua", 999, "red");
-        //int id3 = PersonaInfoDAO.save(persona);
         Persona persona = new Persona(1,"manolo", "moya", "rgua", 999, "red");
         PersonaInfoDAO.update(persona);
         Persona personaUpd = PersonaInfoDAO.get(1);
